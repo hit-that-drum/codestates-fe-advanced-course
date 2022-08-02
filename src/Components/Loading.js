@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const LoaderOutBox = styled.div`
+  position: absolute;
+  top: 35%;
+  left: 50%;
+`
 const Loader = styled.div`
   color: #33CCFF;
   font-size: 20px;
@@ -8,7 +13,6 @@ const Loader = styled.div`
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  position: relative;
   text-indent: -9999em;
   -webkit-animation: load4 1.3s infinite linear;
   animation: load4 1.3s infinite linear;
@@ -75,9 +79,11 @@ const Loader = styled.div`
 
 const Loading = () => {
   return (
-    <Loader>
-      Loading...
-    </Loader>
+    <LoaderOutBox>
+      <Loader>
+        Loading...
+      </Loader>
+    </LoaderOutBox>
   );
 };
 
