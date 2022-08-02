@@ -6,6 +6,9 @@ import Header from './Header';
 import axios from "axios";
 import Loading from './Loading';
 
+import Pagination from './Pagination';
+
+
 const OuterBox = styled.div`
   margin: 5vh;
 `
@@ -20,8 +23,12 @@ const ListBlock = styled.div`
 `
 
 const List = () => {
-  const [contents, setContents] = useState(null);
+  const [contents, setContents] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const limit = 10;
+  const [page, setPage] = useState(1);
+  const offset = (page - 1) * limit;
   
   useEffect(() => {
     const fetchData = async () => {
@@ -53,11 +60,20 @@ const List = () => {
       <Header />
       <OuterBox>
         <ListBlock>
-          {contents.map((content) => 
+          {contents.slice(offset, offset + limit).map((content) => 
             <Contents key={content.id} contents={content} />
           )}
         </ListBlock>
       </OuterBox>
+
+      <footer>
+        <Pagination
+          total={contents.length}
+          limit={limit}
+          page={page}
+          setPage={setPage}
+        />
+      </footer>
     </>
   );
 };

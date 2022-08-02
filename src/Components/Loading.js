@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 const Loader = styled.div`
   color: #33CCFF;
   font-size: 20px;
