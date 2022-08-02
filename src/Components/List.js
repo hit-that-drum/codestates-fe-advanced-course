@@ -8,9 +8,11 @@ import Loading from './Loading';
 
 import Pagination from './Pagination';
 
-
 const OuterBox = styled.div`
   margin: 5vh;
+`
+const OuterBoxNight = styled(OuterBox)`
+  background-color: black;
 `
 const ListBlock = styled.div`
   display: flex;
@@ -21,10 +23,16 @@ const ListBlock = styled.div`
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 `
+const ListBlockNight = styled(ListBlock)`
+  background-color: black;
+  color: white;
+`
 
 const List = () => {
   const [contents, setContents] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const limit = 10;
   const [page, setPage] = useState(1);
@@ -57,14 +65,25 @@ const List = () => {
 
   return (
     <>
-      <Header />
-      <OuterBox>
-        <ListBlock>
+      <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        {
+          isDarkMode ?
+        <OuterBoxNight>
+          <ListBlockNight>
           {contents.slice(offset, offset + limit).map((content) => 
             <Contents key={content.id} contents={content} />
           )}
-        </ListBlock>
-      </OuterBox>
+          </ListBlockNight>
+        </OuterBoxNight>
+        :
+        <OuterBox>
+          <ListBlock>
+          {contents.slice(offset, offset + limit).map((content) => 
+            <Contents key={content.id} contents={content} />
+          )}
+          </ListBlock>  
+        </OuterBox> 
+        }
 
       <footer>
         <Pagination

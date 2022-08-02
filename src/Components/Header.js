@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Toggle from './Toggle';
+
+const HeaderOut = styled.div`
+  display: flex;
+  background-color: #33CCFF;
+  align-items: center;
+`
 
 const HeaderBox = styled.div`
-  margin: 0 auto 5vh 0;
+  margin: auto;
   padding: 2vh;
   font-size: 7vh;
   font-weight: 1000;
@@ -12,11 +19,26 @@ const HeaderBox = styled.div`
   text-shadow: 6px 5px 0px rgba(0,0,0,0.15);
 `
 
-const Header = () => {
+const HeaderBoxNight = styled(HeaderBox)`
+  color: black;
+`
+
+const Header = ({ isDarkMode, setIsDarkMode }) => {
+
   return (
-    <HeaderBox>
-      BOARD
-    </HeaderBox>
+    <HeaderOut>
+      {
+        isDarkMode ?
+        <HeaderBoxNight>
+          BOARD
+        </HeaderBoxNight>
+        :
+        <HeaderBox>
+          BOARD
+        </HeaderBox>
+      }
+      <Toggle setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
+    </HeaderOut>
   );
 };
 
