@@ -4,7 +4,7 @@ CODE STATES FE ADVANCED COURSE 사전과제
 
 <br>
 
-### < 더블엔씨 >
+### <  >
 
 <br>
 
@@ -20,7 +20,7 @@ CODE STATES FE ADVANCED COURSE 사전과제
 
 ### 🧔 메인 
 
-![무제](https://user-images.githubusercontent.com/85816029/156166483-589773df-ba6c-4a77-8a05-9025847632df.png)
+![무제]()
 
 
 <br>
