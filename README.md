@@ -4,32 +4,28 @@ CODE STATES FE ADVANCED COURSE 사전과제
 
 <br>
 
-### <  >
+### < 사전과제 >
 
 <br>
 
-[배포링크]()
+[배포링크](https://hit-that-drum.github.io/codestates-fe-advanced-course/)
 
 <br>
 
 ## ✨ 주요 기능
 
-
-
-<br>
-
-### 🧔 메인 
-
-![무제]()
-
+- JSON Placeholder를 활용한 게시판.
 
 <br>
 
 ### 구현한 기능 목록 및 어려웠던 점
 
+
+![](https://user-images.githubusercontent.com/85816029/183298075-467f7c4b-daf5-4428-8807-9479c7521af7.gif)
+
+
 - 게시물 리스트와 상세 게시물 페이지를 확인할 수 있는 게시판 형태의 웹 서비스를 구현하였습니다.
 - 무료 목업 API인 JSON Placeholder 을 활용하였습니다.
-
 
 - 게시물 리스트와 게시물 상세 페이지
 - 게시물 리스트는 게시판 형태로 구성합니다.
@@ -39,8 +35,6 @@ CODE STATES FE ADVANCED COURSE 사전과제
 ### 추가 구현 사항
 
 - 로딩 인디케이터 작성
-
-
 - 페이지네이션 작성
 
 
